@@ -1,0 +1,394 @@
+/* --- サイト全体の基本設定 --- */
+body {
+    font-family: sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #0056b3;
+}
+
+/* --- トップページ用ボタン --- */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+a:hover {
+    background-color: #0056b3;
+}
+
+/* --- 区切り線 --- */
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin-top: 30px;
+}
+
+/* --- 診断ページ用 --- */
+.question-box {
+    margin-top: 30px;
+}
+.question-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+.question-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 10px 0 20px;
+}
+.answer-button {
+    display: block;
+    width: 80%;
+    max-width: 400px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid #ddd;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.answer-button:hover {
+    background-color: #e9e9e9;
+    border-color: #007bff;
+}
+
+/* --- 診断ページの進捗バー (テキスト無し版) --- */
+.progress-container {
+    width: 90%; 
+    height: 15px; 
+    background-color: #e0e0e0; 
+    border-radius: 10px;
+    margin: 20px auto 10px; 
+    overflow: hidden; 
+}
+.progress-bar {
+    width: 0%; 
+    height: 100%; 
+    background-color: #007bff; 
+    border-radius: 10px;
+    transition: width 0.4s ease; 
+}
+
+
+/* --- 結果ページ用 --- */
+.result-card {
+    background-color: #f9f9f9;
+    border: 2px dashed #007bff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+#result-name {
+    color: #007bff;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.event-box {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.share-buttons a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.9rem;
+}
+.share-x { background-color: #1DA1F2; }
+.share-line { background-color: #06C755; }
+.share-insta { background-color: #E1306C; }
+
+.download-button {
+    background-color: #28a745;
+    border: none;
+}
+.download-button:hover {
+    background-color: #218838;
+}
+.retry-button {
+    background-color: #6c757d;
+    border: none;
+}
+.retry-button:hover {
+    background-color: #5a6268;
+}
+
+
+/* --- 結果マップ (ver.4.6 / 軸ラベル外部配置・バグ修正) --- */
+.result-map-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* (padding は削除) */
+}
+
+/* マップ本体 (自由配置の「親」) */
+.map-grid-container {
+    display: block; 
+    width: 80%; /* 80% に戻す */
+    aspect-ratio: 1 / 1; 
+    margin: 10px auto; 
+    border: 3px solid #ccc; 
+    border-radius: 10px;
+    /* overflow: hidden; */ /* ★★★削除！★★★ これがバグの原因 */
+    position: relative; 
+    
+    /* 上下のラベルをはみ出させるための余白 */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* マップに「中央の軸線」を描画 */
+.map-grid-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%; 
+    border-left: 2px dashed #aaa;
+    z-index: 1; 
+}
+.map-grid-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%; 
+    border-top: 2px dashed #aaa;
+    z-index: 1; 
+}
+
+/* 内部の軸ラベル (共通) */
+.axis-label {
+    position: absolute;
+    font-size: 0.8rem; 
+    font-weight: bold;
+    color: #555;
+    padding: 2px 4px;
+    border-radius: 3px;
+    z-index: 2; 
+    white-space: nowrap; 
+}
+
+/* 内部の軸ラベル (外部配置) */
+.axis-label.y-high {
+    top: -25px; /* 外に押し出す */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #d9534f; 
+}
+.axis-label.y-low {
+    bottom: -25px; /* 外に押し出す */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0275d8; 
+}
+.axis-label.x-high {
+    top: 50%;
+    right: -10px; /* 外に押し出す */
+    transform: translate(100%, -50%);
+    color: #d9534f; 
+}
+.axis-label.x-low {
+    top: 50%;
+    left: -10px; /* 外に押し出す */
+    transform: translate(-100%, -50%);
+    color: #0275d8; 
+}
+
+
+/* マップの各マス (絶対配置の「子」) */
+.map-cell {
+    position: absolute; 
+    width: 28%;
+    aspect-ratio: 1 / 1; 
+    
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    
+    color: #333; 
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    
+    border: 2px solid #ddd;
+    border-radius: 10px; 
+    
+    font-size: 0.85rem; 
+    font-weight: bold;
+    line-height: 1.5; 
+    
+    transform: translate(-50%, -50%); 
+    z-index: 2; 
+}
+
+/* 9タイプの個別座標（中央軸線基準） */
+#map-T3 { top: 20%; left: 20%; }  
+#map-T2 { top: 20%; left: 50%; } 
+#map-T1 { top: 20%; left: 80%; } 
+
+#map-T6 { top: 50%; left: 20%; }  
+#map-T5 { top: 50%; left: 50%; } 
+#map-T4 { top: 50%; left: 80%; } 
+
+#map-T9 { top: 80%; left: 20%; }  
+#map-T8 { top: 80%; left: 50%; } 
+#map-T7 { top: 80%; left: 80%; } 
+
+
+/* あなたの現在地 */
+.map-cell.current-position {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #0056b3; 
+    z-index: 10; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%) scale(1.1); 
+    
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* あなた以外のマス (フェード) */
+.map-cell.faded {
+    opacity: 0.5; 
+    background-color: #f0f0f0;
+    z-index: 2; 
+}
+
+/* 「YOU!」バッジのデザイン */
+.you-badge {
+    position: absolute; 
+    top: 5px; 
+    right: 5px; 
+    background-color: #ffc107; 
+    color: #333;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    z-index: 11; 
+}
+/* --- キャリア・ロードマップ (双六風) --- */
+.roadmap-container {
+    width: 100%;
+    margin: 30px auto;
+    position: relative;
+    padding-top: 10px; /* ピンのスペースを削除したので調整 */
+    padding-bottom: 20px;
+}
+
+.roadmap-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* 背景のグレーの線 */
+.roadmap-line-bg {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #e0e0e0;
+    z-index: 1;
+}
+
+/* 進捗を表す色付きの線 */
+.roadmap-line-fill {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background-color: #007bff;
+    z-index: 2;
+    transition: width 1s ease;
+}
+
+/* 各ステップ (マス) */
+.roadmap-step {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40px;
+}
+
+/* マスの円 */
+.step-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: 3px solid #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #aaa;
+    font-size: 1rem;
+    transition: all 0.5s ease;
+}
+
+/* 完了したマスのスタイル (!importantで確実化) */
+.roadmap-step.active .step-circle {
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+    color: #fff !important;
+    transform: scale(1.1);
+}
+
+/* ★NEW★ 現在地のマスを赤色で強調表示するスタイル */
+.roadmap-step.current .step-circle {
+    background-color: #d9534f !important; /* 赤系 */
+    border-color: #d9534f !important;
+    color: #fff !important;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(217, 83, 79, 0.7);
+}
+
+/* マスの下の文字 */
+.step-label {
+    margin-top: 8px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #666;
+    line-height: 1.2;
+    text-align: center;
+}

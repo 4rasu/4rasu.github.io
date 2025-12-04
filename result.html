@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>診断結果 | 就活タイプ診断</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3H3TLYLXTX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-3H3TLYLXTX");
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="capture-area">
+        <h2>あなたの就活タイプは…</h2>
+        <div class="result-card">
+          <h1 id="result-name">（読み込み中...）</h1>
+          <p id="result-description">（読み込み中...）</p>
+          <img
+            id="result-image"
+            src=""
+            alt="診断結果イラスト"
+            style="
+              max-width: 100%;
+              height: auto;
+              margin-top: 20px;
+              display: none;
+            "
+          />
+        </div>
+      </div>
+      <hr />
+      <!--
+		<div class="roadmap-container">
+			<h3>▼ あなたの就活現在地 ▼</h3>
+			<div class="roadmap-track">
+				<div class="roadmap-line-bg"></div>
+				<div class="roadmap-line-fill" id="roadmap-line-fill"></div>
+				<div class="roadmap-step" id="step-1">
+					<div class="step-circle">1</div>
+					<div class="step-label">就活<br>開始</div>
+				</div>
+		
+				<div class="roadmap-step" id="step-2">
+					<div class="step-circle">2</div>
+					<div class="step-label">自己<br>分析</div>
+				</div>
+		
+				<div class="roadmap-step" id="step-3">
+					<div class="step-circle">3</div>
+					<div class="step-label">業界<br>研究</div>
+				</div>
+		
+				<div class="roadmap-step" id="step-4">
+					<div class="step-circle">4</div>
+					<div class="step-label">選考<br>対策</div>
+				</div>
+				<div class="roadmap-step" id="step-5">
+					<div class="step-circle">🏁</div>
+					<div class="step-label">内定<br>獲得</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+  -->
+
+      <div class="result-map-container">
+        <h3>▼ あなたの就活ポジションマップ ▼</h3>
+        <div class="map-grid-container">
+          <span class="axis-label y-high">（やりたい事が明確）</span>
+          <span class="axis-label y-low">（まだ将来は未定）</span>
+          <span class="axis-label x-high">（まずは行動したい）</span>
+          <span class="axis-label x-low">（じっくり考えたい）</span>
+
+          <div class="map-cell" id="map-T3">T3<br />(情熱家)</div>
+          <div class="map-cell" id="map-T2">T2<br />(冒険家)</div>
+          <div class="map-cell" id="map-T1">T1<br />(戦略家)</div>
+
+          <div class="map-cell" id="map-T6">T6<br />(探求者)</div>
+          <div class="map-cell" id="map-T5">T5<br />(ﾏｲﾍﾟｰｽ)</div>
+          <div class="map-cell" id="map-T4">T4<br />(職人)</div>
+
+          <div class="map-cell" id="map-T9">T9<br />(相談者)</div>
+          <div class="map-cell" id="map-T8">T8<br />(悩める人)</div>
+          <div class="map-cell" id="map-T7">T7<br />(賢者)</div>
+        </div>
+      </div>
+      <hr />
+
+      <h3>▼ あなたにおすすめのイベントガチャ！</h3>
+      <div class="event-box" id="event-gacha">（ガチャを回しています...）</div>
+      <hr />
+
+      <h3>▼ あなた専用の特典</h3>
+      <a href="#" class="download-button" id="download-link">
+        （特典を読み込み中...）
+      </a>
+      <hr />
+      <h3>▼ 診断結果をシェアしよう！</h3>
+      <div class="share-buttons">
+        <a href="#" class="share-x" id="share-x-btn">Xでシェア</a>
+        <a href="#" class="share-line" id="share-line-btn">LINEで送る</a>
+        <a href="#" class="share-insta">画像で保存(インスタ用)</a>
+      </div>
+      <hr />
+      <a href="index.html" class="retry-button" style="margin-top: 30px">
+        もう一度診断する
+      </a>
+
+      <footer>
+        <p>&copy; 専修大学 キャリア形成支援課</p>
+      </footer>
+    </div>
+    <script src="result.js"></script>
+  </body>
+</html>
