@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   let currentQuestionIndex = 0; // 現在の質問番号
-
   // --- 進捗バー更新関数 ---
   function updateProgress() {
     const progressPercent = (currentQuestionIndex / totalQuestions) * 100;

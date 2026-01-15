@@ -5,55 +5,64 @@ document.addEventListener('DOMContentLoaded', function () {
       name: "【タイプ1】(仮) 戦略家タイプ",
       description: "あなたはタイプ1です。進捗も気合いも十分！この調子で！",
       events: ["(T1向け) イベントA", "(T1向け) イベントB"],
-      downloads: "files/t1_set.zip"
+      downloads: "files/t1_set.zip",
+      image: "A1"
     },
     "T2": {
       name: "【タイプ2】(仮) 冒険家タイプ",
       description: "あなたはタイプ2です。気合いは十分！あとは行動あるのみ！",
       events: ["(T2向け) イベントC", "(T2向け) イベントD"],
-      downloads: "files/t2_set.zip"
+      downloads: "files/t2_set.zip",
+      image: "A2"
     },
     "T3": {
       name: "【タイプ3】(仮) 情熱家タイプ",
       description: "あなたはタイプ3です。やる気はピカイチ！まず一歩を踏み出そう！",
       events: ["(T3向け) イベントE", "(T3向け) イベントF"],
-      downloads: "files/t3_set.zip"
+      downloads: "files/t3_set.zip",
+      image: "A3"
     },
     "T4": {
       name: "【タイプ4】(仮) 職人タイプ",
       description: "あなたはタイプ4です。コツコツ進めていて偉い！自信を持って！",
       events: ["(T4向け) イベントG", "(T4向け) イベントH"],
-      downloads: "files/t4_set.zip"
+      downloads: "files/t4_set.zip",
+      image: "A4"
     },
     "T5": {
       name: "【タイプ5】(仮) マイペースタイプ",
       description: "あなたはタイプ5です。自分のペースでOK！少しずつ進めよう。",
       events: ["(T5向け) イベントI", "(T5向け) イベントJ"],
-      downloads: "files/t5_set.zip"
+      downloads: "files/t5_set.zip",
+      image: "A5"
     },
     "T6": {
       name: "【タイプ6】(仮) 探求者タイプ",
       description: "あなたはタイプ6です。興味の種を見つけよう。",
       events: ["(T6向け) イベントK", "(T6向け) イベントL"],
-      downloads: "files/t6_set.zip"
+      downloads: "files/t6_set.zip",
+      image: "A6"
     },
     "T7": {
       name: "【タイプ7】(仮) 賢者タイプ",
       description: "あなたはタイプ7です。もう一息！",
       events: ["(T7向け) イベントM", "(T7向け) イベントN"],
-      downloads: "files/t7_set.zip"
+      downloads: "files/t7_set.zip",
+      image: "A7"
     },
     "T8": {
       name: "【タイプ8】(仮) 悩める人タイプ",
       description: "あなたはタイプ8です。休憩も大事。",
       events: ["(T8向け) イベントO", "(T8向け) イベントP"],
-      downloads: "files/t8_set.zip"
+      downloads: "files/t8_set.zip",
+      image: "A8"
     },
     "T9": {
       name: "【タイプ9】(仮) 相談者タイプ",
       description: "あなたはタイプ9です。悩む前にまず相談！私たちがいます！",
       events: ["(T9向け) イベントQ", "(T9向け) イベントR"],
-      downloads: "files/t9_set.zip"
+      downloads: "files/t9_set.zip",
+      image: "A9"
     }
   };
 
@@ -82,8 +91,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if (resultNameElement) resultNameElement.innerText = resultData.name;
   if (resultDescElement) resultDescElement.innerText = resultData.description;
 
+  // メイン画像の表示
   if (resultImageElement) {
-    const imagePath = `images/${resultType}.png`;
+    // 画面上部のメイン画像パス
+    const imagePath = `images/result/${resultType}.png`;
     resultImageElement.src = imagePath;
     resultImageElement.style.display = 'block';
   }
@@ -124,20 +135,33 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error("シェアボタン設定エラー:", e);
   }
 
-  // 4. マップのハイライト (YOUバッジ版)
+  // 4. マップのハイライト (文字を消して画像 + YOUバッジ)
   try {
-    // 全セルを薄くする
+    // 全セルを薄くする（必要なければ削除可）
     const allMapCells = document.querySelectorAll('.map-cell');
     allMapCells.forEach(cell => cell.classList.add('faded'));
 
-    // 該当セルを強調
+    // 該当セルを取得
     const currentMapCell = document.getElementById(`map-${resultType}`);
+
+    //boxに画像
     if (currentMapCell) {
       currentMapCell.classList.remove('faded');
-      currentMapCell.classList.add('current-position');
+      currentMapCell.classList.add('active-cell');
 
-      // バッジ追加
-      const youBadge = document.createElement('span');
+      // ★重要: 既存のテキスト(T1 戦略家...)を空にする
+      currentMapCell.innerHTML = '';
+
+
+      const mapImg = document.createElement('img');
+      mapImg.src = 'images/box/' + resultData.image + '.png'; 
+      mapImg.alt = resultType;
+      // CSSでサイズなどを調整するためのクラス
+      mapImg.classList.add('result-map-image'); 
+      currentMapCell.appendChild(mapImg);
+
+      //YOUバッジ
+      const youBadge = document.createElement('div');
       youBadge.className = 'you-badge';
       youBadge.innerText = 'YOU!';
       currentMapCell.appendChild(youBadge);
@@ -217,6 +241,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+  
+  // GA計測など
   // 1. 【タイプ出現率】結果ページが開かれたら「診断完了」と「タイプ」を送信
   gtag('event', 'diagnosis_complete', {
     'result_type': myType ? myType : 'unknown'
@@ -253,5 +279,4 @@ document.addEventListener('DOMContentLoaded', function () {
       gtag('event', 'share_click', { 'method': 'ImageDownload', 'user_type': myType });
     });
   }
-
 });
