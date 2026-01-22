@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>診断中... | 就活タイプ診断</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3H3TLYLXTX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-3H3TLYLXTX");
+    </script>
+  </head>
+  <body>
+    <header class="site-header"></header>
+    <div class="container">
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <div class="question-box" id="q1" style="display: block;"data-type="progress">
+          <span class="question-number">Q1 / 10</span>
+            <p class="question-text">Q1 自分の強みや価値観、自己PRを整理し、他者に説明できるレベルまで準備できていますか？</p>
+            <a href="#" class="answer-button" data-value="A">A. 強みや価値観を整理し、自己PRも明確に説明できる</a>
+            <a href="#" class="answer-button" data-value="B">B. 強みや価値観はある程度整理できているが、説明は曖昧</a>
+            <a href="#" class="answer-button" data-value="C">C. 強みや価値観はまだ整理できておらず、自己PRも準備していない</a>
+        </div>
+
+        <div class="question-box" id="q2" style="display: none;"data-type="progress">
+            <span class="question-number">Q2 / 10</span>
+            <p class="question-text">Q2 関心のある業界・企業を把握し、比較や特徴理解ができていますか？</p>
+            <a href="#" class="answer-button" data-value="A">A. 興味のある業界・企業を複数リストアップし、特徴や違いも理解している</a>
+            <a href="#" class="answer-button" data-value="B">B. 興味はあるが、特徴や違いの理解は曖昧</a>
+            <a href="#" class="answer-button" data-value="C">C. 興味のある業界・企業はまだ明確でない</a>
+        </div>
+
+        <div class="question-box" id="q3" style="display: none;"data-type="progress">
+            <span class="question-number">Q3 / 10</span>
+            <p class="question-text">Q3 インターンや説明会に参加し、経験を振り返ったり学びを整理できていますか？</p>
+            <a href="#" class="answer-button" data-value="A">A. インターン・説明会に参加し、学びを整理して次の行動も計画できている</a>
+            <a href="#" class="answer-button" data-value="B">B. 参加はしているが、振り返りや計画はまだ不十分</a>
+            <a href="#" class="answer-button" data-value="C">C. 参加経験も振り返りもまだない</a>
+        </div>
+        
+        <div class="question-box" id="q4" style="display: none;"data-type="progress">
+            <span class="question-number">Q4 / 10</span>
+            <p class="question-text">Q4 筆記試験とエントリーシートの準備を行い、必要な対策や書類作成ができていますか？</p>
+            <a href="#" class="answer-button" data-value="A">A. 筆記対策もES作成も実施済みで、他者添削や改善も完了している</a>
+            <a href="#" class="answer-button" data-value="B">B. 基本情報は理解しているが、対策や作成は途中／不十分</a>
+            <a href="#" class="answer-button" data-value="C">C. 筆記もESの準備もまだ手をつけていない</a>
+        </div>
+
+        <div class="question-box" id="q5" style="display: none;"data-type="progress">
+            <span class="question-number">Q5 / 10</span>
+            <p class="question-text">Q5 面接やグループディスカッションの経験（模擬含む）があり、振り返り・改善ができていますか？</p>
+            <a href="#" class="answer-button" data-value="A">A. 面接・GDを経験し、改善点を把握して次に活かせている</a>
+            <a href="#" class="answer-button" data-value="B">B. 経験はあるが、振り返りや改善は不十分</a>
+            <a href="#" class="answer-button" data-value="C">C. 面接・GDの経験や振り返りはまだない</a>
+        </div>
+
+        <div class="question-box" id="q6" style="display: none;"data-type="motivation">
+            <span class="question-number">Q6 / 10</span>
+            <p class="question-text">Q6 就職活動に関する情報（ニュース、サイト、SNSなど）への関心度はどの程度ですか？</p>
+            <a href="#" class="answer-button" data-value="A">A. 意識的に、週に3回以上は必ずチェックしている</a>
+            <a href="#" class="answer-button" data-value="B">B. 気になった時に見る程度で、頻度は高くない</a>
+            <a href="#" class="answer-button" data-value="C">C. ほとんど情報を見ていない</a>
+        </div>
+
+        <div class="question-box" id="q7" style="display: none;"data-type="motivation">
+            <span class="question-number">Q7 / 10</span>
+            <p class="question-text">Q7 5年後や10年後といった中期的なキャリアに対する考えはどの程度具体的ですか？</p>
+            <a href="#" class="answer-button" data-value="A">A. 働く場所や目標など、人に説明できる具体的なイメージを持っている</a>
+            <a href="#" class="answer-button" data-value="B">B. ざっくりとした方向性（職種や業界）は決まっている</a>
+            <a href="#" class="answer-button" data-value="C">C. まだ将来のことは漠然としていて、何も考えられていないC</a>
+        </div>
+
+        <div class="question-box" id="q8" style="display: none;"data-type="motivation">
+            <span class="question-number">Q8 / 10</span>
+            <p class="question-text">Q8 就活で困難や失敗に直面したとき、自分なら乗り越えられると思い、次に活かすための行動を考えられますか？</p>
+            <a href="#" class="answer-button" data-value="A">A. 自分ならできると考え、失敗から原因を分析し改善点を明確にできる</a>
+            <a href="#" class="answer-button" data-value="B">B. 自信はあるが、失敗の原因分析や改善策はまだ十分ではない</a>
+            <a href="#" class="answer-button" data-value="C">C. 自信が持てず、失敗するとモチベーションが大きく下がる</a>
+        </div>
+
+        <div class="question-box" id="q9" style="display: none;"data-type="motivation">
+            <span class="question-number">Q9 / 10</span>
+            <p class="question-text">Q9 就職活動の状況や悩みについて、家族以外の人との交流はどの程度ありますか？</p>
+            <a href="#" class="answer-button" data-value="A">A. 就活仲間やOB/OGなどと、月に1回以上、積極的に情報交換・相談している</a>
+            <a href="#" class="answer-button" data-value="B">B. 困った時にたまに相談する程度で、頻繁ではない</a>
+            <a href="#" class="answer-button" data-value="C">C. ほとんど誰にも相談したり、情報交換したりしていない</a>
+        </div>
+        
+        <div class="question-box" id="q10" style="display: none;"data-type="motivation">
+            <span class="question-number">Q10 / 10</span>
+            <p class="question-text">Q10 就職活動の準備のために、どの程度の時間を確保していますか？</p>
+            <a href="#" class="answer-button" data-value="A">A. 週に5時間以上（半日程度）の時間を、優先的に確保している</a>
+            <a href="#" class="answer-button" data-value="B">B. やるべきことがある時にだけ、まとまった時間を割いている</a>
+            <a href="#" class="answer-button" data-value="C">C. 学業や私的な活動が優先で、就活に時間を割けていない</a>
+        </div>
+
+      <hr />
+      <!--<p>&copy; 専修大学 キャリア形成支援課</p>-->
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

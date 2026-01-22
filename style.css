@@ -1,0 +1,493 @@
+/* style.css */
+
+/* --- サイト全体の基本設定 --- */
+body {
+  font-family: sans-serif;
+  color: #333;
+  /*max-width: 600px;*/
+  /*margin: 20px auto;*/
+  /*padding: 20px;*/
+  background-color: #ffffff;
+  /*border-radius: 10px;*/
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+
+  display: flex;           /* Flexboxにする */
+  flex-direction: column;  /* 縦並びにする */
+  min-height: 100vh;       /* 高さを画面の高さ(100vh)以上にする */
+}
+
+h1,
+h2 {
+  color: #009437;
+}
+h3 {
+  text-align: left;
+  color: #525151;
+}
+
+/* --- トップページ用ボタン --- */
+a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  color: #009437;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+a:hover {
+  background-color: #009437;
+  color: #fff; /* ホバー時は文字を白に */
+}
+
+/* --- 区切り線 --- */
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin-top: 30px;
+}
+
+/* --- 診断ページ用 --- */
+.question-box {
+  margin-top: 40px;
+  margin-bottom: auto;
+}
+.question-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #009437;
+}
+.question-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 10px 0 20px;
+  margin-bottom: 20px;
+}
+.answer-button {
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  margin: 15px auto;
+  padding: 15px;
+  background-color: #ffffff;
+  color: #333;
+  border: 2px solid #ddd;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 50;
+  font-size: 1rem;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+.answer-button:hover {
+  background-color: #009437;
+  /*border-color: #009437;*/
+}
+
+/* --- 診断ページの進捗バー (テキスト無し版) --- */
+.progress-container {
+
+  width: 90%;
+  height: 15px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  margin: 70px auto 10px;
+  overflow: hidden;
+}
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #009437;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+/* --- 結果ページ用 --- */
+.result-card {
+  /*background-color: #f9f9f9;*/
+  /*border: 2px dashed #009437;*/
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+#result-name {
+  color: #009437;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.event-box {
+  background-color: #f0fff4;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.share-buttons a {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  font-size: 0.9rem;
+}
+/* SNSの色はブランドカラーなのでそのまま維持 */
+.share-x {
+  background-color: #1da1f2;
+}
+.share-line {
+  background-color: #06c755;
+}
+.share-insta {
+  background-color: #e1306c;
+}
+
+.download-button {
+  background-color: #009437;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 50;
+  text-decoration: none;
+  font-weight: bold;
+}
+.download-button:hover {
+  background-color: #007a2d;
+}
+.retry-button {
+  background-color: #009437;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+.retry-button:hover {
+  background-color: #007a2d;
+}
+
+/* --- 結果マップ --- */
+.result-map-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* マップ本体 */
+.map-grid-container {
+  display: block;
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  margin: 10px auto;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* マップに「中央の軸線」を描画 */
+.map-grid-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 2px dashed #aaa;
+  z-index: 1;
+}
+.map-grid-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 2px dashed #aaa;
+  z-index: 1;
+}
+
+/* 内部の軸ラベル (共通) */
+.axis-label {
+  position: absolute;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #555;
+  padding: 2px 4px;
+  border-radius: 3px;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+/* 内部の軸ラベル (外部配置) */
+.axis-label.y-high {
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FF3033;
+}
+.axis-label.y-low {
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #3F6ED8;
+}
+.axis-label.x-high {
+  top: 50%;
+  right: -10px;
+  transform: translate(100%, -50%);
+  color: #FF3033;
+  writing-mode: vertical-rl; /* 文字を縦書きにする */
+}
+.axis-label.x-low {
+  top: 50%;
+  left: -10px;
+  transform: translate(-100%, -50%);
+  color: #3F6ED8;
+  writing-mode: vertical-rl; /* 文字を縦書きにする */
+}
+
+/* マップの各マス (絶対配置の「子」) */
+.map-cell {
+  position: absolute;
+  width: 28%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  line-height: 1.5;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  overflow: hidden; /* 画像がはみ出ないように */
+}
+
+/* 9タイプの個別座標（中央軸線基準） */
+#map-T3 {
+  top: 20%;
+  left: 20%;
+}
+#map-T2 {
+  top: 20%;
+  left: 50%;
+}
+#map-T1 {
+  top: 20%;
+  left: 80%;
+}
+
+#map-T6 {
+  top: 50%;
+  left: 20%;
+}
+#map-T5 {
+  top: 50%;
+  left: 50%;
+}
+#map-T4 {
+  top: 50%;
+  left: 80%;
+}
+
+#map-T9 {
+  top: 80%;
+  left: 20%;
+}
+#map-T8 {
+  top: 80%;
+  left: 50%;
+}
+#map-T7 {
+  top: 80%;
+  left: 80%;
+}
+
+/* あなたの現在地（文字が出る場合） */
+.map-cell.current-position {
+  color: #fff;
+  background-color: #009437;
+  border-color: #007a2d;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) scale(1.1);
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* 選択されてる枠（画像表示時） ←positionMap*/
+.map-cell.active-cell {
+  border: 4px solid #6cd994;
+}
+
+/* あなた以外のマス (フェード) */
+.map-cell.faded {
+  opacity: 0.5;
+  background-color: #f0f0f0;
+  z-index: 2;
+}
+
+/* 「YOU!」バッジのデザイン */
+.you-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #FF3033;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 11;
+}
+
+/* 画像のスタイル */
+.result-map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* --- キャリア・ロードマップ (双六風) --- */
+.roadmap-container {
+  width: 100%;
+  margin: 30px auto;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.roadmap-track {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* 背景のグレーの線 */
+.roadmap-line-bg {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #e0e0e0;
+  z-index: 1;
+}
+
+/* 進捗を表す色付きの線 */
+.roadmap-line-fill {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background-color: #009437;
+  z-index: 2;
+  transition: width 1s ease;
+}
+
+/* 各ステップ (マス) */
+.roadmap-step {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+}
+
+/* マスの円 */
+.step-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 3px solid #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #aaa;
+  font-size: 1rem;
+  transition: all 0.5s ease;
+}
+
+/* 完了したマスのスタイル */
+.roadmap-step.active .step-circle {
+  background-color: #009437 !important;
+  border-color: #009437 !important;
+  color: #fff !important;
+  transform: scale(1.1);
+}
+
+/* 現在地のマスを赤色で強調表示するスタイル（ここは赤のままでOK） */
+.roadmap-step.current .step-circle {
+  background-color: #d9534f !important;
+  border-color: #d9534f !important;
+  color: #fff !important;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(217, 83, 79, 0.7);
+}
+
+/* マスの下の文字 */
+.step-label {
+  margin-top: 8px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #666;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.top-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: #fff!important;
+}
+
+.top-pages {
+  margin-top: 50px;
+  background-color: #009437;
+}
+
+.index-text {
+  color: #ffffff;
+  padding-top: 50px;
+  margin-top: 0;
+}
+
+/*ヘッダー*/
+.site-header {
+  background-color: #009437; /* 緑色 */
+  color: #ffffff;            /* 文字は白 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;               /* 横幅いっぱい */
+  height: 60px;              /* ヘッダーの高さ（好きに変えてOK） */
+  /* ▼ 他の要素より手前に表示させる */
+  z-index: 9999;
+  /* 中身の文字を真ん中にする設定 */
+  display: flex;
+  align-items: center;
+}
