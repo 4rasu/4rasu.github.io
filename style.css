@@ -2,6 +2,8 @@
 
 /* --- サイト全体の基本設定 --- */
 body {
+  margin: 0;
+  padding: 0;
   font-family: sans-serif;
   color: #333;
   /*max-width: 600px;*/
@@ -12,9 +14,9 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   text-align: center;
 
-  display: flex;           /* Flexboxにする */
-  flex-direction: column;  /* 縦並びにする */
-  min-height: 100vh;       /* 高さを画面の高さ(100vh)以上にする */
+  display: flex; /* Flexboxにする */
+  flex-direction: column; /* 縦並びにする */
+  min-height: 100vh; /* 高さを画面の高さ(100vh)以上にする */
 }
 
 h1,
@@ -60,12 +62,16 @@ hr {
   font-size: 1.2rem;
   font-weight: bold;
   color: #009437;
+  display: block;
 }
 .question-text {
+  color: #525151;
+  display: inline-block;
   font-size: 1.3rem;
   font-weight: bold;
-  margin: 10px 0 20px;
+  margin: 24px 0 20px;
   margin-bottom: 20px;
+  text-align: left;
 }
 .answer-button {
   display: block;
@@ -75,11 +81,11 @@ hr {
   padding: 15px;
   background-color: #ffffff;
   color: #333;
-  border: 2px solid #ddd;
+  border: 2px solid #BDBDBD;
   text-decoration: none;
   font-weight: bold;
   border-radius: 50;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition:
     background-color 0.3s,
     border-color 0.3s;
@@ -89,14 +95,43 @@ hr {
   /*border-color: #009437;*/
 }
 
+.answer-button2 {
+  display: block;
+  width: 70%;
+  max-width: 400px;
+  margin: 15px auto;
+  padding: 15px 0px;
+  background-color:#009437;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 50;
+  font-size: 0.9rem;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+.answer-button2:hover {
+  background-color: #ffffff;
+  color: #333;
+  border: 2px solid #BDBDBD;
+  /*border-color: #009437;*/
+}
+.container2{
+  background-color: #74c18c;
+  height: 100%;
+}
+
+
+
 /* --- 診断ページの進捗バー (テキスト無し版) --- */
 .progress-container {
-
   width: 90%;
-  height: 15px;
+  height: 8px;
   background-color: #e0e0e0;
   border-radius: 10px;
-  margin: 70px auto 10px;
+  margin: 20% auto 10px;
   overflow: hidden;
 }
 .progress-bar {
@@ -111,7 +146,7 @@ hr {
 .result-card {
   /*background-color: #f9f9f9;*/
   /*border: 2px dashed #009437;*/
-  padding: 20px;
+  padding: 0px;
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -128,16 +163,7 @@ hr {
   font-size: 1.1rem;
   font-weight: bold;
 }
-.share-buttons a {
-  display: inline-block;
-  margin: 5px;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #fff;
-  font-size: 0.9rem;
-}
+
 /* SNSの色はブランドカラーなのでそのまま維持 */
 .share-x {
   background-color: #1da1f2;
@@ -168,10 +194,13 @@ hr {
   background-color: #009437;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 50px;
   border-radius: 50px;
   text-decoration: none;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
+
 .retry-button:hover {
   background-color: #007a2d;
 }
@@ -180,6 +209,7 @@ hr {
 .result-map-container {
   margin-top: 30px;
   margin-bottom: 30px;
+  padding: 0px 20px;
 }
 
 /* マップ本体 */
@@ -232,26 +262,26 @@ hr {
   top: -25px;
   left: 50%;
   transform: translateX(-50%);
-  color: #FF3033;
+  color: #ff3033;
 }
 .axis-label.y-low {
   bottom: -25px;
   left: 50%;
   transform: translateX(-50%);
-  color: #3F6ED8;
+  color: #3f6ed8;
 }
 .axis-label.x-high {
   top: 50%;
   right: -10px;
   transform: translate(100%, -50%);
-  color: #FF3033;
+  color: #ff3033;
   writing-mode: vertical-rl; /* 文字を縦書きにする */
 }
 .axis-label.x-low {
   top: 50%;
   left: -10px;
   transform: translate(-100%, -50%);
-  color: #3F6ED8;
+  color: #3f6ed8;
   writing-mode: vertical-rl; /* 文字を縦書きにする */
 }
 
@@ -346,7 +376,7 @@ hr {
   position: absolute;
   top: 5px;
   right: 5px;
-  background-color: #FF3033;
+  background-color: #ff3033;
   color: #fff;
   font-size: 0.7rem;
   font-weight: bold;
@@ -460,34 +490,212 @@ hr {
 
 .top-img {
   width: 100%;
+  padding: 0px;
+  margin: 0px;
   height: auto;
-  display: block;
-  background-color: #fff!important;
+  background-color: #fff !important;
 }
 
 .top-pages {
-  margin-top: 50px;
-  background-color: #009437;
+  margin-top: 0%;
+  display: flex;
+  flex-direction: column; /* 縦に並べる */
+  height: 100dvh; /* 高さをスマホ画面の100%に固定 */
+  width: 100%;
 }
 
+.top-info {
+  width: 100%;
+  padding: 7% 0%;
+  margin: 0;
+  background-color: #009437; /* 背景色 */
+  position: relative; /* ボタンの位置の基準にする */
+  box-sizing: border-box; /* paddingを含めたサイズ計算にする */
+}
+
+/* 5. ボタン：画面の下（緑エリアの下）から固定の位置に配置 */
+.index-all {
+        position: relative; /* ★重要：ここをボタン配置の基準点にする */
+        width: 100%;
+        height: 100dvh;     /* 画面の高さ100% */
+        display: flex;
+        flex-direction: column;
+      }
+.index-all a {
+        position: absolute;  /* 浮かせ配置 */
+        /* 位置の指定 */
+        bottom: 30px;        /* ★下から30px（※解説参照） */
+        left: 50%;           /* 左から50% */
+        transform: translateX(-50%);
+
+        /* 以下はボタンの見た目（変更なし） */
+        display: inline-block;
+        background-color: #ffffff;
+        color: #009437;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 15px 60px;
+        border-radius: 50px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        white-space: nowrap;
+        z-index: 10; /* 重なり順を一番手前に */
+      }
+
+/* テキストの位置調整（変更なし） */
+.top-info p {
+  display: inline-block;
+  text-align: left;
+  /*margin-top: 40px; /* 上に少し隙間 */
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.8;
+}
 .index-text {
   color: #ffffff;
-  padding-top: 50px;
+  padding-top: 200%;
   margin-top: 0;
 }
 
 /*ヘッダー*/
 .site-header {
   background-color: #009437; /* 緑色 */
-  color: #ffffff;            /* 文字は白 */
+  color: #ffffff; /* 文字は白 */
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;               /* 横幅いっぱい */
-  height: 60px;              /* ヘッダーの高さ（好きに変えてOK） */
-  /* ▼ 他の要素より手前に表示させる */
+  width: 100%; /* 横幅いっぱい */
+  height: 7%; /* ヘッダーの高さ（好きに変えてOK） */
+  /* 他の要素より手前に表示させる */
   z-index: 9999;
   /* 中身の文字を真ん中にする設定 */
   display: flex;
   align-items: center;
+}
+
+/* --- diagnosis.html 専用の背景（画像） --- */
+.diagnosis-page {
+  /* 画像の場所を指定 (style.cssから見た相対パス) */
+  background-image: url("images/backgroud.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* 画像を常に画面の中央に配置する */
+  background-position: center;
+
+  background-attachment: fixed;
+
+  /* もし画像が読み込めなかった時のための背景色（任意） */
+  background-color: #ffffff;
+}
+
+.features-container {
+  padding: 0px 20px;
+}
+
+.weakness-list,
+.features-list {
+  /* フォントと色の設定 */
+  color: #555555; /* 画像に近いダークグレー */
+  font-family:
+    "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+    "Meiryo", sans-serif;
+  font-size: 16px; /* 読みやすいサイズ感 */
+  line-height: 1.6; /* 行間を少し広げて読みやすく */
+
+  /* リストマークの位置調整 */
+  list-style-type: disc; /* 黒丸 */
+  padding-left: 1.5em; /* 左側のインデント（点のスペース確保） */
+  margin: 0; /* デフォルトのマージンをリセット */
+  margin-bottom: 50px;
+}
+
+.weakness-list li,
+.features-list li {
+  /* リストアイテム間の余白 */
+  margin-bottom: 12px; /* 各行の下に適度な隙間を作る */
+  text-align: left;
+}
+
+.greenh3 h3 {
+  color: #009437; /* テキストの色 */
+  border: 1px solid #009437; /* 枠線の太さと色 */
+  font-size: 16px;
+  /* 形と配置の設定 */
+  border-radius: 100px; /* 角を完全に丸くする（カプセル型） */
+  padding: 0.7em 1em; /* 枠内の余白（上下、左右） */
+  width: fit-content; /* テキストの長さに合わせて枠の幅を自動調整 */
+
+  /* フォントの設定 */
+  font-weight: bold; /* 太字 */
+  text-align: left;
+
+  /* その他の調整 */
+  background-color: #ffffff; /* 背景を白にする（必要に応じて） */
+  box-sizing: border-box;
+}
+
+.margin-b {
+  margin-bottom: 40px;
+}
+
+.download,
+.share {
+  padding: 0px 20px;
+  margin: 50px 0px;
+}
+
+.download h3,
+.share h3 {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.download p {
+  font-size: 15px;
+  text-align: left; /* テキストを左揃えにする */
+}
+
+.share a {
+  font-size: 13px;
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5px; /* 10pxだと広すぎるので狭くする */
+  flex-wrap: nowrap; /* ★重要：絶対に折り返さない設定に変更 */
+  width: 100%; /* 親要素の幅を最大限使う */
+}
+
+.share-buttons a {
+  display: inline-block;
+  padding: 10px 13px; /* 左右の余白を15pxから減らす */
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  font-size: 11.5px; /* 文字サイズを少し小さくして収まりやすくする */
+  white-space: nowrap; /* ボタン内の文字が変な位置で改行されないようにする */
+}
+
+#answer-reuturn {
+  display: inline-block;
+  text-decoration: underline;
+  text-decoration-thickness: 10px;
+  text-underline-offset: 10px;
+  background-color: transparent;
+  color: #615a5a;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+#answer-reuturn:hover {
+
+
 }

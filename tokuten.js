@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // --- 2. タイプごとの特典データ ---
   const tokutenData = {
     "T1": {
-
       file: "files/t1_set.zip",
       image:1
     },
@@ -61,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ダウンロードリンクを設定
   btnEl.href = data.file;
-  btnEl.innerText = "この特典をダウンロード";
+  btnEl.innerText = "ダウンロード";
 
   if (data.image) {
     imageEl.src = "images/gift/" + data.image + ".png";

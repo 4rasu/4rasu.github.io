@@ -2,111 +2,152 @@ document.addEventListener('DOMContentLoaded', function () {
   // 1. 診断結果データベース (9タイプ)
   const resultsData = {
     "T1": {
-      name: "【タイプ1】(仮) 戦略家タイプ",
-      description: "あなたはタイプ1です。進捗も気合いも十分！この調子で！",
-      events: ["(T1向け) イベントA", "(T1向け) イベントB"],
+      name: "ゴールへまっしぐらな「トップランナー」",
       downloads: "files/t1_set.zip",
       image: "A1",
       features: [
-        "目標に向かって論理的に計画を立てられる",
-        "無駄を省き、効率的に行動することができる",
-        "リーダーシップを発揮する場面が多い"
+        "準備は万端！納得内定が視野に入っている段階",
+        "自分の軸がはっきりしている",
+        "難易度の高い企業にも積極的に挑戦する",
+      ],
+      weakness: [
+        "完璧主義になりがち",
+        "軸にこだわりすぎて、選択肢が狭くなってしまう"
       ],
     },
     "T2": {
-      name: "【タイプ2】(仮) 冒険家タイプ",
-      description: "あなたはタイプ2です。気合いは十分！あとは行動あるのみ！",
-      events: ["(T2向け) イベントC", "(T2向け) イベントD"],
+      name: "ムダなく内定を狙う「戦略家」",
       downloads: "files/t2_set.zip",
       image: "A2",
       features: [
-        "とにかく行動力がずば抜けている",
-        "失敗を恐れず挑戦できる",
-        "周りを巻き込むエネルギーがある"
+        "行動に移しているものの、心の底からの熱意がブレがち",
+        "効率重視の就活",
+        "どこでもいいので、早めに内定が欲しい",
+      ],
+      weakness: [
+        "モチベーションに波がある",
+        "仕事への本質的な興味は薄い",
+        "職種や企業の選択に、はっきりした理由がない"
       ],
     },
     "T3": {
-      name: "【タイプ3】(仮) 情熱家タイプ",
+      name: "周りに合わせて頑張る「まじめさん」",
       description: "あなたはタイプ3です。やる気はピカイチ！まず一歩を踏み出そう！",
       events: ["(T3向け) イベントE", "(T3向け) イベントF"],
       downloads: "files/t3_set.zip",
       image: "A3",
       features: [
-        "熱い想いを持っている",
-        "一度決めると一直線に進む",
-        "感情表現が豊か"
+        "周りのペースに合わせて動いている",
+        "自分のやりたいことがはっきりとしていない",
+        "就活を頑張っているのに、なんだか納得できない"
+      ],
+      weakness: [
+        "自分のことをまだ理解しきっていない",
+        "進路選択に「意味」が付いていない",
+        "周りにスピードを合わせるのではなく、自分のために動く"
       ],
     },
     "T4": {
-      name: "【タイプ4】(仮) 職人タイプ",
+      name: "やる気が先走っちゃう「情熱家」",
       description: "あなたはタイプ4です。コツコツ進めていて偉い！自信を持って！",
       events: ["(T4向け) イベントG", "(T4向け) イベントH"],
       downloads: "files/t4_set.zip",
       image: "A4",
       features: [
-        "こだわりを持って作業できる",
-        "高い集中力を発揮する",
-        "クオリティを妥協しない"
+        "誰よりもやる気に満ち溢れている",
+        "やる気が空回りしがち",
+        "情報収集や思考はしっかりしている",
+        "具体的な行動や方法がいまいちわかっていない"
+      ],
+      weakness: [
+        "・行動に移すのに時間がかかってしまう",
+        "失敗を恐れすぎている",
+        "完璧な準備を求めてしまいがち"
       ],
     },
     "T5": {
-      name: "【タイプ5】(仮) マイペースタイプ",
+      name: "",
       description: "あなたはタイプ5です。自分のペースでOK！少しずつ進めよう。",
       events: ["(T5向け) イベントI", "(T5向け) イベントJ"],
       downloads: "files/t5_set.zip",
       image: "A5",
       features: [
-        "周囲に流されず自分を持てる",
-        "冷静に状況を判断できる",
-        "独自の視点を持っている"
+        "着実に就活を進めている",
+        "大きな遅れはないが、爆発的な勢いもない",
+        "平均的な層の就活生"
+      ],
+      weakness: [
+        "「標準」からなかなか抜け出せない",
+        "周囲に言われた通りにしてしまいがち",
+        "自分の本音を追求できていない"
       ],
     },
     "T6": {
-      name: "【タイプ6】(仮) 探求者タイプ",
+      name: "なんだか波に乗れない「焦り屋さん」",
       description: "あなたはタイプ6です。興味の種を見つけよう。",
       events: ["(T6向け) イベントK", "(T6向け) イベントL"],
       downloads: "files/t6_set.zip",
       image: "A6",
       features: [
-        "「なぜ？」を突き詰められる",
-        "情報収集能力が高い",
-        "分析することが得意"
+        "なんとなく選考を受けている",
+        "各企業への本気度がやや低め",
+        "良い結果がでないことに焦り出している",
+      ],
+      weakness: [
+        "準備が中途半端になってしまうことがある",
+        "モチベーションが下がってしまいがち",
+        "就活の目的を明確にする",
       ],
     },
     "T7": {
-      name: "【タイプ7】(仮) 賢者タイプ",
+      name: "理想だけがふくらむ「空想家」",
       description: "あなたはタイプ7です。もう一息！",
       events: ["(T7向け) イベントM", "(T7向け) イベントN"],
       downloads: "files/t7_set.zip",
       image: "A7",
       features: [
-        "知識豊富で頼りにされる",
-        "客観的なアドバイスができる",
-        "物事の本質を見抜ける"
+        "キャリアへの理想や熱意は強い",
+        "やる気は人一倍",
+        "就活に関する情報が不足している",
+      ],
+      weakness: [
+        "理想をリアルな目標に変えよう",
+        "具体的にやるべきことをリストアップしよう",
+        "基本の「自己分析」と「企業研究」を徹底的にしよう",
       ],
     },
     "T8": {
-      name: "【タイプ8】(仮) 悩める人タイプ",
+      name: "なかなか踏み出せない「慎重派」",
       description: "あなたはタイプ8です。休憩も大事。",
       events: ["(T8向け) イベントO", "(T8向け) イベントP"],
       downloads: "files/t8_set.zip",
       image: "A8",
       features: [
-        "慎重に物事を考えられる",
-        "リスク管理能力がある",
-        "他人の気持ちに寄り添える"
+        "就活をかなり意識し始めている",
+        "まだ何から始めていいかわかっていない",
+        "行動することへの不安や迷いが大きい",
+      ],
+      weakness: [
+        "キャリア形成支援課や先輩に相談して、不安を解消しよう",
+        "小さな目標を設定して自信をつけよう",
+        "まずは説明会などに気軽に参加してみよう"
       ],
     },
     "T9": {
-      name: "【タイプ9】(仮) 相談者タイプ",
+      name: "マイペースを貫く「自由人」",
       description: "あなたはタイプ9です。悩む前にまず相談！私たちがいます！",
       events: ["(T9向け) イベントQ", "(T9向け) イベントR"],
       downloads: "files/t9_set.zip",
       image: "A9",
       features: [
-        "素直に人の意見を聞ける",
-        "協調性が高くチーム向き",
-        "愛されキャラ"
+        "就活そのものへの関心や危機感が薄い",
+        "今は、プライベートや学業が第一優先",
+        "就活はまだしなくてもいいやと思いがち"
+      ],
+      weakness: [
+        "キャリア形成支援課や先輩に相談して、不安を解消しよう",
+        "小さな目標を設定して自信をつけよう",
+        "まずは説明会などに気軽に参加してみよう",
       ],
     }
   };
@@ -131,7 +172,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const resultImageElement = document.getElementById('result-image');
   const eventGachaElement = document.getElementById('event-gacha');
   const downloadLinkElement = document.getElementById('download-link');
-  const featuresListElement = document.getElementById('features-list'); 
+  const featuresListElement = document.getElementById('features-list');
+  const weaknessListElement = document.getElementById('weakness-list');
 
   if (resultNameElement) resultNameElement.innerText = resultData.name;
   if (resultDescElement) resultDescElement.innerText = resultData.description;
@@ -140,10 +182,22 @@ document.addEventListener('DOMContentLoaded', function () {
   if (featuresListElement) {
     featuresListElement.innerHTML = ''; // まず中身をリセット
     if (resultData.features && Array.isArray(resultData.features)) {
-      resultData.features.forEach(function(text) {
+      resultData.features.forEach(function (text) {
         const li = document.createElement('li');
         li.innerText = text;
         featuresListElement.appendChild(li);
+      });
+    }
+  }
+
+  //弱点リスト
+  if (weaknessListElement) {
+    weaknessListElement.innerHTML = ''; // まず中身をリセット
+    if (resultData.weakness && Array.isArray(resultData.weakness)) {
+      resultData.weakness.forEach(function (text) {
+        const li = document.createElement('li');
+        li.innerText = text;
+        weaknessListElement.appendChild(li);
       });
     }
   }
@@ -165,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (downloadLinkElement) {
     if (resultData.downloads) {
       downloadLinkElement.href = "tokuten.html";
-      downloadLinkElement.innerText = "答えてくれたあなたに専用特典！！";
+      downloadLinkElement.innerText = "ダウンロードページヘ";
     } else {
       downloadLinkElement.style.display = 'none';
     }
@@ -246,38 +300,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 6. 画像保存機能
   const saveBtn = document.querySelector('.share-insta');
-  const captureArea = document.getElementById('capture-area');
 
-  if (saveBtn && captureArea) {
+  if (saveBtn) {
     saveBtn.addEventListener('click', function (e) {
       e.preventDefault();
-      const originalText = saveBtn.innerText;
-      saveBtn.innerText = "作成中...";
+      const typeNumber = resultType.replace('T', '');
+      const imageUrl = `images/imageDL/${typeNumber}.png`;
+      const link = document.createElement('a');
+      link.href = imageUrl;
 
-      if (typeof html2canvas !== 'undefined') {
-        html2canvas(captureArea, {
-          scale: 2,
-          useCORS: true,
-          backgroundColor: "#ffffff"
-        }).then(canvas => {
-          const imgData = canvas.toDataURL("image/png");
-          const link = document.createElement('a');
-          link.href = imgData;
-          link.download = 'shindan_result.png';
-          link.click();
-          saveBtn.innerText = originalText;
-        }).catch(err => {
-          console.error("画像保存エラー:", err);
-          alert("画像の保存に失敗しました。");
-          saveBtn.innerText = originalText;
-        });
-      } else {
-        alert("画像保存ライブラリが読み込まれていません。");
-        saveBtn.innerText = originalText;
-      }
+      link.download = `shindan_result_${resultType}.png`; //ファイル名
+      document.body.appendChild(link); // Firefox等での互換性のためbodyに追加
+      link.click();
+      document.body.removeChild(link); // 用が済んだら削除
     });
   }
-  
+
   // GA計測
   gtag('event', 'diagnosis_complete', {
     'result_type': myType ? myType : 'unknown'

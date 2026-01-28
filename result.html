@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
@@ -23,24 +23,24 @@
   </head>
   <body>
     <div class="header-inner">
-    <div class="container">
-      <div id="capture-area">
-        <div class="result-card">
-          <img
-            id="result-image"
-            src=""
-            alt="診断結果イラスト"
-            style="
-              max-width: 100%;
-              height: auto;
-              margin-top: 20px;
-              display: none;
-            "
-          />
+      <div class="container">
+        <div id="capture-area">
+          <div class="result-card">
+            <img
+              id="result-image"
+              src=""
+              alt="診断結果イラスト"
+              style="
+                max-width: 100%;
+                height: auto;
+                margin-top: 20px;
+                display: none;
+              "
+            />
+          </div>
         </div>
-      </div>
-      <hr />
-      <!--
+        <hr />
+        <!--
 		<div class="roadmap-container">
 			<h3>▼ あなたの就活現在地 ▼</h3>
 			<div class="roadmap-track">
@@ -73,70 +73,72 @@
 		</div>
 		<hr>
   -->
-      <div class="features-container">
-        <h3> どんな特徴？ </h3>
-        <ul class="features-list" id="features-list">
-        </ul>
-      </div>
-      <hr />
 
+        <div class="greenh3">
+          <div class="features-container">
+            <h3>どんな特徴？</h3>
+            <ul class="features-list" id="features-list"></ul>
 
-      <div class="result-map-container">
-        <h3>あなたの就活ポジションマップ</h3>
-        <div class="map-grid-container">
-          <span class="axis-label y-high">やりたい事が明確</span>
-          <span class="axis-label y-low">まだ将来は未定</span>
-          <span class="axis-label x-high">まずは行動したい</span>
-          <span class="axis-label x-low">じっくり考えたい</span>
+            <h3>このタイプの弱点</h3>
+            <ul class="weakness-list" id="weakness-list"></ul>
+          </div>
+          <hr />
 
-          <div class="map-cell" id="map-T3">T3<br />(情熱家)</div>
-          <div class="map-cell" id="map-T2">T2<br />(冒険家)</div>
-          <div class="map-cell" id="map-T1">T1<br />(戦略家)</div>
+          <div class="result-map-container">
+            <h3 class="margin-b">あなたの就活ポジションマップ</h3>
+            <div class="map-grid-container">
+              <span class="axis-label y-high">やりたい事が明確</span>
+              <span class="axis-label y-low">まだ将来は未定</span>
+              <span class="axis-label x-high">まずは行動したい</span>
+              <span class="axis-label x-low">じっくり考えたい</span>
 
-          <div class="map-cell" id="map-T6">T6<br />(探求者)</div>
-          <div class="map-cell" id="map-T5">T5<br />(ﾏｲﾍﾟｰｽ)</div>
-          <div class="map-cell" id="map-T4">T4<br />(職人)</div>
+              <div class="map-cell" id="map-T3">T3<br />まじめさん</div>
+              <div class="map-cell" id="map-T2">T2<br />戦略家</div>
+              <div class="map-cell" id="map-T1">T1<br />トップランナー</div>
 
-          <div class="map-cell" id="map-T9">T9<br />(相談者)</div>
-          <div class="map-cell" id="map-T8">T8<br />(悩める人)</div>
-          <div class="map-cell" id="map-T7">T7<br />(賢者)</div>
+              <div class="map-cell" id="map-T6">T6<br />焦り屋さん</div>
+              <div class="map-cell" id="map-T5">T5<br />安定派</div>
+              <div class="map-cell" id="map-T4">T4<br />情熱家</div>
+
+              <div class="map-cell" id="map-T9">T9<br />自由人</div>
+              <div class="map-cell" id="map-T8">T8<br />慎重派</div>
+              <div class="map-cell" id="map-T7">T7<br />空想家</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <hr />
+        <hr />
 
-      <!--<h3>▼ あなたにおすすめのイベントガチャ！</h3>
+        <!--<h3>▼ あなたにおすすめのイベントガチャ！</h3>
       <div class="event-box" id="event-gacha">（ガチャを回しています...）</div>
       <hr />-->
+        <div class="download">
+          <h3>あなただけの就活セットをプレゼント</h3>
+          <p>ダウンロードして、より充実した就活を！</p>
+          <a href="#" class="download-button" id="download-link">
+            （特典を読み込み中...）
+          </a>
+        </div>
+        <hr />
 
-      <h3>あなただけの就活セットをプレゼント</h3>
-      <p>ダウンロードして、より充実した就活を！</p>
-      <a href="#" class="download-button" id="download-link">
-        （特典を読み込み中...）
-      </a>
-      <hr />
-      <h3>診断結果をシェアしよう！</h3>
-      <div class="share-buttons">
-        <a href="#" class="share-x" id="share-x-btn">Xでシェア</a>
-        <a href="#" class="share-line" id="share-line-btn">LINEで送る</a>
-        <a href="#" class="share-insta">画像で保存(インスタ用)</a>
+        <div class="share">
+          <h3>診断結果をシェアしよう！</h3>
+          <div class="share-buttons">
+            <a href="#" class="share-x" id="share-x-btn">Xでシェア</a>
+            <a href="#" class="share-line" id="share-line-btn">LINEで送る</a>
+            <a href="#" class="share-insta">画像で保存(インスタ用)</a>
+          </div>
+        </div>
+        <hr />
+        <img src="images/retry.png" alt="retry" style="max-width: 60%" />
+        <a href="index.html" class="retry-button" >
+          もう一度診断する
+        </a>
+
+        <footer>
+          <p>&copy; 専修大学 キャリア形成支援課</p>
+        </footer>
       </div>
-      <hr />
-      <img
-            src="images/retry.png"
-            alt="retry"
-            style="
-              max-width: 100%;
-            "
-          />
-      <a href="index.html" class="retry-button" style="margin-top: 30px">
-        もう一度診断する
-      </a>
-
-      <footer>
-        <p>&copy; 専修大学 キャリア形成支援課</p>
-      </footer>
-    </div>
-    <script src="result.js"></script>
+      <script src="result.js"></script>
     </div>
   </body>
 </html>

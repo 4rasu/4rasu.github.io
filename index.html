@@ -1,10 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>キャリサポ特製！あなたの就活タイプ診断</title>
+    <title>専修大学キャリア形成支援課特製！就活タイプ診断</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* 画面全体を固定してスクロールを禁止 */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; /* スクロールバーを強制的に消す */
+        background-color: #009437;
+      }
+
+    </style>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -22,27 +34,29 @@
   </head>
   <body>
     <!--<h1>キャリア形成支援課特製！<br />あなたの就活タイプ診断</h1>-->
+    <div class="index-all">
       <header class="site-header"></header>
       <div class="top-pages">
         <img
-        src="images/toppage/sam.png"
-        alt="就活タイプ診断のトップ画像"
-        class="top-img"
-      />
+          src="images/toppage/sam.png"
+          alt="就活タイプ診断のトップ画像"
+          class="top-img"
+        />
 
-      <p class="index-text">
-        10つの質問に答えるだけで、<br />
-        あなたの就活スタイルがわかる！<br />
-        限定特典もゲットしよう！
-      </p>
+        <div class="top-info">
+          <p>
+            10コの質問に答えるだけで、<br />
+            あなたの就活スタイルがわかる！<br />
+            限定特典もゲットしよう！
+          </p>
+          </div>
 
-    <a href="diagnosis.html" onclick="gtag('event', 'diagnosis_start');"
-      >診断スタート</a
-    >
-
-    <hr />
-    <!--<p>&copy; 専修大学 キャリア形成支援課</p>-->
-    </body>
-  </div>
+          <a href="diagnosis.html" onclick="gtag('event', 'diagnosis_start')"
+            >診断スタート</a
+          >
+        
+        <!--<p>&copy; 専修大学 キャリア形成支援課</p>-->
+      </div>
+    </div>
   </body>
 </html>
