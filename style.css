@@ -41,10 +41,11 @@ a {
   font-size: 1.1rem;
   transition: background-color 0.3s;
 }
+/*
 a:hover {
   background-color: #009437;
-  color: #fff; /* ホバー時は文字を白に */
-}
+  color: #fff;
+}*/
 
 /* --- 区切り線 --- */
 hr {
@@ -90,10 +91,11 @@ hr {
     background-color 0.3s,
     border-color 0.3s;
 }
+
+/*
 .answer-button:hover {
   background-color: #009437;
-  /*border-color: #009437;*/
-}
+}*/
 
 .answer-button2 {
   display: block;
@@ -112,12 +114,13 @@ hr {
     background-color 0.3s,
     border-color 0.3s;
 }
+
+/*
 .answer-button2:hover {
   background-color: #ffffff;
   color: #333;
   border: 2px solid #BDBDBD;
-  /*border-color: #009437;*/
-}
+}*/
 .container2{
   background-color: #74c18c;
   height: 100%;
@@ -187,9 +190,11 @@ hr {
   text-decoration: none;
   font-weight: bold;
 }
+/*
 .download-button:hover {
   background-color: #007a2d;
 }
+  */
 .retry-button {
   background-color: #009437;
   color: #fff;
@@ -200,11 +205,11 @@ hr {
   margin-top: 0px;
   margin-bottom: 10px;
 }
-
+/*
 .retry-button:hover {
   background-color: #007a2d;
 }
-
+*/
 /* --- 結果マップ --- */
 .result-map-container {
   margin-top: 30px;
@@ -695,7 +700,3 @@ hr {
   text-decoration: underline;
 }
 
-#answer-reuturn:hover {
-
-
-}
