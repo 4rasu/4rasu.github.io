@@ -32,8 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     "T3": {
       name: "周りに合わせて頑張る「まじめさん」",
-      description: "あなたはタイプ3です。やる気はピカイチ！まず一歩を踏み出そう！",
-      events: ["(T3向け) イベントE", "(T3向け) イベントF"],
       downloads: "files/t3_set.zip",
       image: "A3",
       features: [
@@ -49,8 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     "T4": {
       name: "やる気が先走っちゃう「情熱家」",
-      description: "あなたはタイプ4です。コツコツ進めていて偉い！自信を持って！",
-      events: ["(T4向け) イベントG", "(T4向け) イベントH"],
       downloads: "files/t4_set.zip",
       image: "A4",
       features: [
@@ -67,8 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     "T5": {
       name: "",
-      description: "あなたはタイプ5です。自分のペースでOK！少しずつ進めよう。",
-      events: ["(T5向け) イベントI", "(T5向け) イベントJ"],
       downloads: "files/t5_set.zip",
       image: "A5",
       features: [
@@ -84,8 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     "T6": {
       name: "なんだか波に乗れない「焦り屋さん」",
-      description: "あなたはタイプ6です。興味の種を見つけよう。",
-      events: ["(T6向け) イベントK", "(T6向け) イベントL"],
       downloads: "files/t6_set.zip",
       image: "A6",
       features: [
@@ -101,8 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     "T7": {
       name: "理想だけがふくらむ「空想家」",
-      description: "あなたはタイプ7です。もう一息！",
-      events: ["(T7向け) イベントM", "(T7向け) イベントN"],
       downloads: "files/t7_set.zip",
       image: "A7",
       features: [
@@ -118,8 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     "T8": {
       name: "なかなか踏み出せない「慎重派」",
-      description: "あなたはタイプ8です。休憩も大事。",
-      events: ["(T8向け) イベントO", "(T8向け) イベントP"],
       downloads: "files/t8_set.zip",
       image: "A8",
       features: [
@@ -135,8 +123,6 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     "T9": {
       name: "マイペースを貫く「自由人」",
-      description: "あなたはタイプ9です。悩む前にまず相談！私たちがいます！",
-      events: ["(T9向け) イベントQ", "(T9向け) イベントR"],
       downloads: "files/t9_set.zip",
       image: "A9",
       features: [
