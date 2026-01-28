@@ -354,6 +354,7 @@ hr {
 
 /* あなたの現在地（文字が出る場合） */
 .map-cell.current-position {
+  box-sizing: border-box;
   color: #fff;
   background-color: #009437;
   border-color: #007a2d;
